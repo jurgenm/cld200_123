@@ -6,8 +6,11 @@ const cds = require("@sap/cds");
  */
 module.exports = cds.service.impl(async function () {
     // Define constants for the Risk and BusinessPartners entities from the risk-service.cds file
-    const { Risks, BusinessPartners } = this.entities;
-
+    const Risks = this.entities('RiskService').Risks;
+    const BusinessPartners = this.entities('RiskService').BusinessPartners;  
+    //const { Risks, BusinessPartners } = this.entities;
+    //const { Risks, BusinessPartners } = this.entities('RiskService');
+ 
     /**
      * Set criticality after a READ operation on /risks
      */
